@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+
+  nginx_server:
+    depends_on:
+      - wordpress
+    image: nginx:1.15.12-alpine
+    container_name: nginx_server
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx-conf-https/:/etc/nginx/conf.d
+      - /etc/letsencrypt:/etc/letsencrypt
