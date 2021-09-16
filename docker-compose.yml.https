@@ -1,10 +1,8 @@
-version: '3'
+version: '2'
 
 services:
 
   nginx_server:
-    depends_on:
-      - wordpress
     image: nginx:1.15.12-alpine
     container_name: nginx_server
     restart: always
